@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const styles = {
   card: {
@@ -14,6 +15,11 @@ const styles = {
   media: {
     height: 750,
   },
+};
+
+const constructMovieDetailsUrl = movieId => `https://www.themoviedb.org/movie/${movieId}`;
+const redirectToMoviePage = (movieId) => {
+  window.location = constructMovieDetailsUrl(movieId);
 };
 
 // This component renders the movie poster and some details about the movie
@@ -28,7 +34,13 @@ const PosterCard = ({ classes, posterUrl, movieDetails }) => (
         <Typography component="p">{movieDetails.overview}</Typography>
       </CardContent>
       <CardActions>
-        {/* TODO */}
+        <Button
+          size="small"
+          color="primary"
+          onClick={() => redirectToMoviePage(movieDetails.id)}
+        >
+          Read More
+        </Button>
       </CardActions>
     </Card>
   </div>
