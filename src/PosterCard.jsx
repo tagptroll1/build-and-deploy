@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
+import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 
 const styles = {
@@ -31,7 +32,13 @@ const PosterCard = ({ classes, posterUrl, movieDetails }) => (
         <Typography variant="h5" component="h2">
           {movieDetails.title}
         </Typography>
-        <Typography component="p">{movieDetails.overview}</Typography>
+        <Typography paragraph className={classes.secondaryText} color="textSecondary">
+          (
+          {new Date(movieDetails.release_date).getFullYear()}
+          )
+        </Typography>
+        <Typography paragraph component="p">{movieDetails.overview}</Typography>
+        <Chip label={`Rating: ${movieDetails.vote_average}`} className={classes.chip} variant="outlined" />
       </CardContent>
       <CardActions>
         <Button
