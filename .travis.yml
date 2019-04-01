@@ -1,10 +1,16 @@
 language: node_js
 node_js:
-  - 'lts/*'
+- lts/*
 cache:
   directories:
   - node_modules
 script:
-  - npm run lint
-  - npm test
-  - npm run build
+- npm run lint
+- npm test
+- npm run build
+deploy:
+  provider: heroku
+  app: erlendr-build-and-deploy-2019
+  skip_cleanup: true
+  api_key:
+    secure: ZUV6nq3Z97jVXN6f7s+bC5pvL6elxSdFuMdZU/1VzOMzz1AgX/bqKZzEYF2VbHc2y/JvyYreA97QmtR/iiwNxoYCTo3AMTzSq5o+MlBr/Bg3sshNQBdMqImA2LtkNimHa2yC63wMYUNm+3UGm2NQWoIpTJtcKUx3jdmfeWAdulgMIItNkDObr7eCHojo4nVtugisQxS1yhy4Tf9n/NCRDpXOeGcsGUOSQup+NGsyj7JjhBujyHlcFfPyjZhbtH+ok0WbiGHOB1A+eDr5jQo989Ck6rcZOB5Rm/hibIG8/kuNIBHJa7wjNDocZXbi9xq4Xwl4bglt4OvZwSXsz7lJ+XIQaOGbWRsE8kUrsXDE9I0GqBrtadPHDwEKb9p3z3uGrET999jYtNC+IaF45XlfvcPDvTZU91CzWUZygIyfobS2/HV69JIeTRjwpzV2zkAKrEY58jSKLpNFrHsHlpuUFa8SMRsnDsf40an0D07mc8hWmtRQPLev/XsCxAh97EZ/M81OvIBy2BVtMBCxGO3sCRltdB4P/SraFcGs2eGJjy/ghD2IwhXqsMF6h5MB/BzAVdc/T4nrhw1bCHcxmHkvVqgOI2JAwaPUJgzR2kd0rDIyFckZb2ptIidGVqIuIJmMlfWkDoLdAERIT0uj77A/T9q9X65i9iq5QJ32duOzEXc=
