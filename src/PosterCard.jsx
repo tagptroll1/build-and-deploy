@@ -27,9 +27,7 @@ const PosterCard = ({ classes, posterUrl, movieDetails }) => (
         </Typography>
         <Typography component="p">{movieDetails.overview}</Typography>
       </CardContent>
-      <CardActions>
-        {/* TODO */}
-      </CardActions>
+      <CardActions>{/* TODO */}</CardActions>
     </Card>
   </div>
 );
